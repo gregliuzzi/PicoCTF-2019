@@ -74,7 +74,8 @@
 
 1. To simplify the solution we can utilize a feature of gdb known as user-defined command hooks (https://sourceware.org/gdb/current/onlinedocs/gdb.html/Hooks.html#Hooks). Hooks in gdb enable us to automatically execute certain commands in response to other commands. In particular, gdb provides us with the pseudo-command `stop` which corresponds to any break in program execution. If we want to print the value of `eax` before the call to `doNothing` we can define a hook like so
 
-   ```define hook-stop \
+   ```
+      define hook-stop \
       printf "picoCTF{%d}\n", $eax \
       c \
       end
